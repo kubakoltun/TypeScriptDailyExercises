@@ -4,7 +4,7 @@ function divisibleByFive(binaryInput: string): boolean {
     
     for (let i = binaryInput.length-1; i >= 0; i--) {
         if (Number(binaryInput.charAt(i)) === 1) {
-            sum += Math.pow(2, revI);;
+            sum += Math.pow(2, revI);
         } 
         revI++;
     }
