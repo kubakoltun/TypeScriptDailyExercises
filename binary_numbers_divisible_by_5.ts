@@ -15,6 +15,10 @@ function divisibleByFive(binaryInput: string): boolean {
       return false
     }
 }
+
+function convertioToBinary(decimalInput: number): string {
+    return decimalInput.toString(2);
+}
   
 //or as a regex
 //export const divisibleByFive = /^(0|(101(0)*|(10(10)*0)))$/;
