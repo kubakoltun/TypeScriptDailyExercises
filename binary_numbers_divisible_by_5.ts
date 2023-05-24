@@ -1,6 +1,9 @@
 function divisibleByFive(binaryInput: string): boolean {
     let sum: number = 0;
     let revI: number = 0;
+
+    //const decimalNumber = parseInt(binaryInput, 2);
+    //decimalNumber % 5 === 0 ? return true : return false;
     
     for (let i = binaryInput.length-1; i >= 0; i--) {
         if (Number(binaryInput.charAt(i)) === 1) {
