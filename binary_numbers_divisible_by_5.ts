@@ -16,3 +16,5 @@ function divisibleByFive(binaryInput: string): boolean {
     }
 }
   
+//or as a regex
+//export const divisibleByFive = /^(0|(101(0)*|(10(10)*0)))$/;
