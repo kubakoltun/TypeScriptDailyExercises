@@ -1,4 +1,4 @@
-export class Kata {
+export class validate_pin {
   static validatePin(pin: string): boolean {
     const pinLen: number = pin.length;
     
