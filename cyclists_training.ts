@@ -14,8 +14,8 @@ export function temps(v0:number, slope:number, dTot:number): number {
   let watts = WATTS0;
   
   while (d < dTot) {
-    const slopeFactor = (Math.atan(slope / 100) * 180) / Math.PI;
-    const slopeEffect = GRAVITY_ACC * Math.sin(slopeFactor); 
+    const slopeFactor = Math.atan(slope / 100); 
+    const slopeEffect = GRAVITY_ACC * Math.tan(slopeFactor); 
 
     const acceleration = -slopeEffect - (DRAG * Math.abs(v) * v / MASS);
 
