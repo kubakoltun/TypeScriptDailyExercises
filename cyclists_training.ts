@@ -3,11 +3,11 @@ export function temps(v0: number, slope: number, dTot: number): number {
   const DRAG = 60.0 * 0.3 / 3.6; 
   const DELTA_T = 1.0 / 60.0; 
   const G_THRUST = 60 * 3.6 * 3.6; 
-  const MASS = 80.0; 
+  const MASS = 80.0;
   const WATTS0 = 225.0; 
   const D_WATTS = 0.5; 
 
-  let t = 0; 
+  let t = 0;
   let gamma = 0; 
   let v = v0; 
   let d = 0; 
@@ -28,7 +28,7 @@ export function temps(v0: number, slope: number, dTot: number): number {
       return -1; 
     }
 
-    d = d + (v * DELTA_T) / 60.0;
+    d = d + v * DELTA_T / 60.0;
     t++;
 
     watts = watts - D_WATTS * DELTA_T;
