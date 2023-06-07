@@ -22,12 +22,12 @@ function gn(n: number): number[] {
 }
 
 export function countOnes(n: number): number {
-  const sequence: number[] = gn(n);
-  return sequence.filter((num) => num === 1).length + 1;
+  const sequence: number[] = [1, ...gn(n)];
+  return sequence.filter((num) => num === 1).length;
 }
 
 function p(n: number): number[] {
-  const sequence: number[] = gn(n);
+  const sequence: number[] = [1, ...gn(n)];
   const primes: number[] = [];
   for (const num of sequence) {
     if (num !== 1 && isPrime(num)) {
@@ -69,5 +69,5 @@ function anOver(n: number): number[] {
 export function anOverAverage(n: number): number {
   const sequence: number[] = anOver(n);
   const sum: number = sequence.reduce((a, b) => a + b, 0);
-  return Math.floor(sum / sequence.length);
+  return sequence.length > 0 ? Math.floor(sum / sequence.length) : NaN;
 }
