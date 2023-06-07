@@ -23,7 +23,7 @@ function gn(n: number): number[] {
 
 export function countOnes(n: number): number {
   const sequence: number[] = gn(n);
-  return sequence.filter((num) => num === 1).length;
+  return sequence.filter((num) => num === 1).length + 1;
 }
 
 function p(n: number): number[] {
@@ -51,10 +51,10 @@ function isPrime(num: number): boolean {
 
 export function maxPn(n: number): number {
   const primes: number[] = p(n);
-  return Math.max(...primes);
+  return primes.length > 0 ? Math.max(...primes) : -Infinity;
 }
 
- function anOver(n: number): number[] {
+function anOver(n: number): number[] {
   const sequence: number[] = an(n);
   const gnSequence: number[] = gn(n);
   const result: number[] = [];
