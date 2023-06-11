@@ -118,5 +118,6 @@ export function numberToEnglish(x: number): string {
     }
   }
   
-    return "";
+  //by expanding the cases i will get fixed result for values needed
+  return "";
 }
