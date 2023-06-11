@@ -29,7 +29,6 @@ export function temps(v0: number, slope: number, dTot: number): number {
     }
 
     d = d + v * DELTA_T * 60.0; 
-
     t++;
     watts = watts - D_WATTS * DELTA_T;
   }
