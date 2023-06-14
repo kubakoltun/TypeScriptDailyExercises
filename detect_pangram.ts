@@ -7,6 +7,7 @@ export const isPangram = (phrase: string): boolean => {
       //{}
     } else {
       let found: boolean = false;
+      
       for (let j = 0; j < i; j++) {
         if (phrase[i].toLowerCase() == phrase[j].toLowerCase()) {
           found = true;
