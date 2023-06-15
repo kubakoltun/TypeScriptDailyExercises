@@ -2,26 +2,24 @@ export function numberToEnglish(x: number) {
   if (!Number.isInteger(x) || x < 0 || x > 99999) {
     return "";
   }
+  if (x === 0) {
+    return "zero";
+  }
 
   const units = [
     "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
     "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"
   ];
-
   const tens = [
     "", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"
   ];
-
   const thousands = [
     "", "thousand", "million", "billion", "trillion"
   ];
 
-  if (x === 0) {
-    return "zero";
-  }
   let words = "";
-
   const groups = [];
+    
   while (x > 0) {
     groups.push(x % 1000);
     x = Math.floor(x / 1000);
@@ -52,7 +50,6 @@ export function numberToEnglish(x: number) {
     } else if (unitsDigit > 0) {
       words += units[unitsDigit] + " ";
     }
-
     words += thousands[i] + " ";
   }
 
