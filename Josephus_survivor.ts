@@ -17,6 +17,7 @@ export function josephusSurvivor(n: number, k: number) {
     if (i > nTab.length-1) {
       i = 0;
     }
+    
     if(nTab.length === 1) {
       break;
     }
