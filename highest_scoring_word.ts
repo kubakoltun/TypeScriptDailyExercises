@@ -9,6 +9,7 @@ export const high = (str: string): string => {
     for (let j = 0; j < word[i].length; j++) {
       sum += word[i].charCodeAt(j) - 96;
     }
+    
     if (sum > maxSum) {
       maxSum = sum;
       result = word[i];
