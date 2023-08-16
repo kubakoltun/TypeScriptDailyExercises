@@ -23,8 +23,7 @@ export function solution(roman: string): number {
     }
     if (romanDigit === 'M') {
       return 1000;
-    }
-    else {
+    } else {
       return 0;
     }
   }
