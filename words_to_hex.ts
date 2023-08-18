@@ -2,6 +2,7 @@ export function wordsToHex(words: string) {
   let wordsArr: string[] = words.split(' ');
   let hexDecimal: string = "";
   let hex: string[] = [];
+  
   for (let i = 0; i < wordsArr.length; i++) {
     for (let j = 0; j < wordsArr[i].length; j++) {
       if (j > 2) {
