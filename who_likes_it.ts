@@ -2,6 +2,7 @@ export const likes = (a : string[]) : string => {
   console.log(a);
   console.log(a.length);
   let whoLikesIt: string = "";
+  
   if (a.length === 0) {
     return "no one likes this";
   }
