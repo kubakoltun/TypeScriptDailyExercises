@@ -2,6 +2,7 @@ function gcd(a: number, b: number): number {
   while (b !== 0) {
     [a, b] = [b, a % b];
   }
+  
   return a;
 }
 
@@ -11,6 +12,7 @@ function an(n: number): number[] {
   for (let i = 2; i <= n; i++) {
     sequence.push(sequence[i - 2] + gcd(i, sequence[i - 2]));
   }
+  
   return sequence;
 }
 
@@ -19,11 +21,13 @@ function gn(n: number): number[] {
   for (let i = 2; i <= n; i++) {
     sequence.push(gcd(i, sequence[i - 2]));
   }
+  
   return sequence;
 }
 
 export function countOnes(n: number): number {
   const sequence: number[] = [1, ...gn(n)];
+  
   return sequence.filter((num) => num === 1).length;
 }
 
@@ -36,6 +40,7 @@ function p(n: number): number[] {
       primes.push(num);
     }
   }
+  
   return primes.slice(0, n);
 }
 
@@ -49,6 +54,7 @@ function isPrime(num: number): boolean {
       return false;
     }
   }
+  
   return true;
 }
 
@@ -67,6 +73,7 @@ function anOver(n: number): number[] {
       result.push(sequence[i] / (i + 1));
     }
   }
+  
   return result;
 }
 
