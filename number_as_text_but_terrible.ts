@@ -29,8 +29,7 @@ export function numberToEnglish(x: number): string {
     }
     else if (digit === 10) {
       return "ten";
-    }
-    else {
+    } else {
       return "";
     }
   }
@@ -55,8 +54,7 @@ export function numberToEnglish(x: number): string {
     }
     else if (teen[1] === 4 || teen[1] === 6 || teen[1] === 7 || teen[1] === 9) {
       return tellDigit(teen[1]) + "teen";
-    }
-    else {
+    } else {
       return "";
     }
   }
@@ -86,8 +84,7 @@ export function numberToEnglish(x: number): string {
     }
     else if (tenth[0] === 9) {
         return ("ninety" + tellDigit(tenth[1])).trim();
-    }
-    else {
+    } else {
       return "";
     }
   }
@@ -112,12 +109,11 @@ export function numberToEnglish(x: number): string {
     }
     else if (hundred[1] === 1) {
       return (tellDigit(hundred[0]) + " hundred " + tellDigit(hundred[2])).trim();
-    }
-    else {
+    } else {
       return (tellDigit(hundred[0]) + " hundred " + tellDigit(hundred[2])).trim();
     }
   }
   
-  //by expanding the cases i will get fixed result for values needed
+  //by expanding these cases i will get fixed result for needed values 
   return "";
 }
