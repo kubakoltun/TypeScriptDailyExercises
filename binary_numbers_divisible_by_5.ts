@@ -23,5 +23,5 @@ function convertioToBinary(decimalInput: number): string {
     return decimalInput.toString(2);
 }
   
-//or as a regex (does not for every case yet)
+//or as a regex (does not work for every case yet)
 //export const divisibleByFive = /^(0|(101(0)*|(10(10)*0)))$/;
