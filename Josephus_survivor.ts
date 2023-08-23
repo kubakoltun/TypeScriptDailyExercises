@@ -10,15 +10,12 @@ export function josephusSurvivor(n: number, k: number) {
       nTab.splice(i, 1);
       i--;
     }
-    
     kStep++;
     i++;
-    
     if (i > nTab.length-1) {
       i = 0;
     }
-    
-    if(nTab.length === 1) {
+    if (nTab.length === 1) {
       break;
     }
   }
