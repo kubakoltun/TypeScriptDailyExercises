@@ -16,7 +16,6 @@ export function numberToEnglish(x: number) {
   const thousands = [
     "", "thousand", "million", "billion", "trillion"
   ];
-
   let words = "";
   const groups = [];
     
@@ -39,15 +38,16 @@ export function numberToEnglish(x: number) {
     if (hundredsDigit > 0) {
       words += units[hundredsDigit] + " hundred ";
     }
-
     if (tensDigit > 1) {
       words += tens[tensDigit] + " ";
       if (unitsDigit > 0) {
         words += units[unitsDigit] + " ";
       }
-    } else if (tensDigit === 1) {
+    } 
+    else if (tensDigit === 1) {
       words += units[group % 100] + " ";
-    } else if (unitsDigit > 0) {
+    } 
+    else if (unitsDigit > 0) {
       words += units[unitsDigit] + " ";
     }
     words += thousands[i] + " ";
