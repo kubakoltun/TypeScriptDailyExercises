@@ -1,36 +1,26 @@
 export function temps(v0: number, slope: number, dTot: number): number {
-  const GRAVITY_ACC = 9.81 * 3.6 * 60.0; 
-  const DRAG = 60.0 * 0.3 / 3.6; 
-  const DELTA_T = 1.0 / 60.0; 
-  const G_THRUST = 60 * 3.6 * 3.6; 
-  const MASS = 80.0; 
-  const WATTS0 = 225.0; 
-  const D_WATTS = 0.5; 
-  let t = 0; 
-  let gamma = 0; 
-  let v = v0; 
-  let d = 0; 
-  let watts = WATTS0; 
-
+  const Ga = 9.81 * 3.6 * 60.0;
+  const D = 60.0 * 0.3 / 3.6;
+  const DT = 1.0 / 60.0;
+  const GT = 60 * 3.6 * 3.6;
+  const M = 80.0;
+  const W = 225.0;
+  const DW = 0.5;
+  
+  let t = 0;
+  let v = v0;
+  let d = 0;
+  let wat = W;
   while (d < dTot) {
-    const slopeFactor = slope / 100.0;
-    const acceleration = -GRAVITY_ACC * slopeFactor + (DRAG * Math.abs(v) * Math.abs(v)) / MASS;
-    const thrust = (watts > 0 && v > 0) ? (G_THRUST * watts) / (v * MASS) : 0;
-
-    gamma = acceleration + thrust;
-    if (Math.abs(gamma) <= 1e-5) {
-      gamma = 0;
-    }
-
-    v = v + gamma * DELTA_T;
-    if (v - 3.0 <= 1e-2) {
-      return -1; 
-    }
-
-    d = d + v * DELTA_T * 60.0; 
+    const g = (GT * wat) / (v * M) - D * Math.abs(v) * v / M - Ga * Math.sin(Math.atan(slope / 100));
+    const a = (Math.abs(g) <= 1e-5) ? 0 : g;
+    v += a * DT;
+    d += v * DT / 60.0;
+    wat -= DW * DT;
+    if (v < 3.0) {
+      return -1;
+    };
     t++;
-    watts = watts - D_WATTS * DELTA_T;
-  }
-
-  return Math.round(t);
-}
+  };
+  return Math.round(t * DT);
+};
