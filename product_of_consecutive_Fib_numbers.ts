@@ -4,7 +4,6 @@ export const productFib = (prod:number): [number,number,boolean] => {
   
   while (fib_n * fib_n_plus_1 < prod) {
     const next_fib = fib_n + fib_n_plus_1;
-    
     fib_n = fib_n_plus_1;
     fib_n_plus_1 = next_fib;
   }
