@@ -4,7 +4,6 @@ export const findOdd = (xs: number[]): number => {
 
   xs.forEach((num) => {
     count = xs.filter((x) => x === num).length;
-    console.log(count);
     
     if (count % 2 !== 0) {
       n = num;
